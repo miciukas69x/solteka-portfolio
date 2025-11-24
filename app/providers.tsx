@@ -2,6 +2,7 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -19,6 +20,7 @@ export const Providers = ({ children }: { children: ReactNode }) => {
             {children}
             <Toaster />
             <Sonner richColors position="top-center" />
+            <Analytics />
           </TooltipProvider>
         </LanguageProvider>
       </ThemeProvider>
