@@ -19,9 +19,21 @@ const solteka = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://solteka.co'),
   title: "Solteka | Marketing & Page Solutions",
   description:
     "Modern marketing, landing pages, and custom web solutions with bilingual support and clear pricing.",
+  openGraph: {
+    title: "Solteka | Marketing & Page Solutions",
+    description: "Modern marketing, landing pages, and custom web solutions with bilingual support and clear pricing.",
+    images: [
+      {
+        url: "/android-chrome-192x192.png",
+        width: 192,
+        height: 192,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

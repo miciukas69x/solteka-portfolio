@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
@@ -7,60 +6,47 @@ import { Badge } from "@/components/ui/badge";
 import { getPostBySlug } from "@/lib/blog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { use } from "react";
+import BlogPostClient from "./BlogPostClient";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
-const BlogPostPage = ({ params }: BlogPostPageProps) => {
-  const { slug } = use(params);
-  const { t, language } = useLanguage();
-  const langKey: "en" | "lt" = language === "lt" ? "lt" : "en";
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: "Post Not Found | Solteka",
+    };
+  }
+
+  return {
+    title: `${post.title.en} | Solteka Blog`,
+    description: post.summary.en,
+    openGraph: {
+      title: `${post.title.en} | Solteka Blog`,
+      description: post.summary.en,
+      images: [
+        {
+          url: "/android-chrome-192x192.png",
+          width: 192,
+          height: 192,
+        },
+      ],
+    },
+  };
+}
+
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
 
-  return (
-    <div className="min-h-screen pt-24">
-      <section className="py-24 px-6">
-        <div className="max-w-3xl mx-auto space-y-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            {t("blog.backToPosts")}
-          </Link>
-
-          <div className="space-y-4">
-            <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
-              <span>{new Date(post.date).toLocaleDateString()}</span>
-              <span>•</span>
-              <span>{post.readingTime[langKey]}</span>
-              <div className="flex flex-wrap gap-2">
-                {post.tags[langKey].map((tag) => (
-                  <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight">{post.title[langKey]}</h1>
-            <p className="text-lg text-muted-foreground">{post.summary[langKey]}</p>
-          </div>
-
-          <article className="space-y-6 text-base text-muted-foreground leading-relaxed">
-            {post.content[langKey].map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </article>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default BlogPostPage;
+  return <BlogPostClient slug={slug} />;
+}
 
