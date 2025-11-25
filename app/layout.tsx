@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import FacebookPixel from "@/components/FacebookPixel";
 
 const koho = KoHo({
   subsets: ["latin"],
@@ -49,6 +50,9 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </Providers>
+        {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID && (
+          <FacebookPixel pixelId={process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID} />
+        )}
       </body>
     </html>
   );
