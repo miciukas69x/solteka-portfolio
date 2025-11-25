@@ -30,6 +30,11 @@ export default function FacebookPixel({ pixelId }: FacebookPixelProps) {
     }
   }, [pathname, searchParams]);
 
+  // Validate pixel ID
+  if (!pixelId || pixelId.trim() === '') {
+    return null;
+  }
+
   return (
     <>
       <Script

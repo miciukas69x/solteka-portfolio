@@ -50,8 +50,10 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </Providers>
-        {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID && (
+        {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID ? (
           <FacebookPixel pixelId={process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID} />
+        ) : (
+          <div data-fb-pixel="missing" style={{ display: 'none' }} />
         )}
       </body>
     </html>
