@@ -34,7 +34,7 @@ const servicesByLang: Record<"en" | "lt", Service[]> = {
       primaryCtaLabel: "View Simple Hustle offer",
       primaryCtaTo: "/solutions/simple-hustle",
       secondaryCtaLabel: "Book a 30 min call",
-      secondaryCtaHref: "https://calendly.com/michailinasmatas/30min",
+      secondaryCtaHref: "https://calendly.com/solteka432/30min",
     },
     {
       icon: <Target className="w-8 h-8" />,
@@ -49,7 +49,7 @@ const servicesByLang: Record<"en" | "lt", Service[]> = {
       primaryCtaLabel: "View Meta Ads offer",
       primaryCtaTo: "/solutions/meta-ads",
       secondaryCtaLabel: "Discuss campaigns",
-      secondaryCtaHref: "https://calendly.com/michailinasmatas/30min",
+      secondaryCtaHref: "https://calendly.com/solteka432/30min",
     },
   ],
 
@@ -67,7 +67,7 @@ const servicesByLang: Record<"en" | "lt", Service[]> = {
       primaryCtaLabel: "Peržiūrėti Simple Hustle pasiūlymą",
       primaryCtaTo: "/solutions/simple-hustle",
       secondaryCtaLabel: "Susitarti dėl 30 min pokalbio",
-      secondaryCtaHref: "https://calendly.com/michailinasmatas/30min",
+      secondaryCtaHref: "https://calendly.com/solteka432/30min",
     },
     {
       icon: <Target className="w-8 h-8" />,
@@ -82,7 +82,7 @@ const servicesByLang: Record<"en" | "lt", Service[]> = {
       primaryCtaLabel: "Peržiūrėti Meta Ads pasiūlymą",
       primaryCtaTo: "/solutions/meta-ads",
       secondaryCtaLabel: "Aptarti reklamos kampanijas",
-      secondaryCtaHref: "https://calendly.com/michailinasmatas/30min",
+      secondaryCtaHref: "https://calendly.com/solteka432/30min",
     },
   ],
 };

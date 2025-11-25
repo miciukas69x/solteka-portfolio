@@ -436,7 +436,7 @@ const SolutionDetailClient = ({ slug }: SolutionDetailClientProps) => {
               </div>
               <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
                 <a
-                  href="https://calendly.com/michailinasmatas/30min"
+                  href="https://calendly.com/solteka432/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full"

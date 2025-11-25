@@ -88,7 +88,7 @@ const Navigation = () => {
             {t("nav.contact")}
           </NavLink>
           <a 
-            href="https://calendly.com/michailinasmatas/30min" 
+            href="https://calendly.com/solteka432/30min" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-2"
@@ -180,7 +180,7 @@ const Navigation = () => {
                   {t("nav.contact")}
                 </NavLink>
                 <a 
-                  href="https://calendly.com/michailinasmatas/30min" 
+                  href="https://calendly.com/solteka432/30min" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-lg font-medium text-foreground hover:text-primary transition-colors flex items-center gap-2"

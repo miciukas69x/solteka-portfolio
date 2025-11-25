@@ -42,7 +42,7 @@ const ContactPageClient = () => {
                       <h3 className="font-semibold mb-1">{t("contact.info.b")}</h3>
                       <p className="text-muted-foreground">{t("contact.info.bc")}</p>
                       <a
-                        href="https://calendly.com/michailinasmatas/30min"
+                        href="https://calendly.com/solteka432/30min"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm text-primary hover:underline mt-1 inline-block"
@@ -106,7 +106,7 @@ const ContactPageClient = () => {
 
                 <div className="mt-8">
                   <p className="text-sm text-muted-foreground mb-4">{t("contact.precta")}</p>
-                  <a href="https://calendly.com/michailinasmatas/30min" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendly.com/solteka432/30min" target="_blank" rel="noopener noreferrer">
                     <Button className="w-full bg-primary hover:bg-primary-glow text-primary-foreground font-medium shadow-[0_0_20px_hsl(var(--primary)/0.3)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] transition-all">
                       <Calendar className="w-4 h-4 mr-2" />
                       {t("contact.cta")}

@@ -195,11 +195,11 @@ const AboutPageClient = () => {
               {whyPoints.filter(p => !p.hasImage).map((point, index) => (
                 <Card
                   key={index}
-                  className="bg-card border-border hover:border-primary/50 transition-all duration-300"
+                  className="bg-card border-border hover:border-primary/50 transition-all duration-300 h-full"
                 >
-                  <CardContent className="p-8 h-full flex flex-col justify-center">
+                  <CardContent className="p-8 h-full flex flex-col">
                     <h3 className="text-xl md:text-2xl font-semibold mb-4">{point.title}</h3>
-                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{point.content}</p>
+                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed flex-1">{point.content}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -412,7 +412,7 @@ const AboutPageClient = () => {
                   {t("contact.info.bc")}
                 </p>
                 <a
-                  href="https://calendly.com/michailinasmatas/30min"
+                  href="https://calendly.com/solteka432/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

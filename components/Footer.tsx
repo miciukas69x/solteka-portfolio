@@ -109,7 +109,7 @@ const Footer = () => {
           </p>
           
           <a 
-            href="https://calendly.com/michailinasmatas/30min" 
+            href="https://calendly.com/solteka432/30min" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-sm text-primary hover:underline"

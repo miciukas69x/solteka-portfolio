@@ -35,17 +35,17 @@ const faqsByLang: Record<
     {
       question: "Can you help with existing websites?",
       answer:
-        "Absolutely. I can optimize your existing site, improve speed and structure, adjust the design, add new sections or features, or, if it makes more sense, rebuild it properly instead of endlessly patching something that doesn’t scale.",
+        "Absolutely. We can optimize your existing site, improve speed and structure, adjust the design, add new sections or features, or, if it makes more sense, rebuild it properly instead of endlessly patching something that doesn't scale.",
     },
     {
       question: "What's included in Meta Ads management?",
       answer:
-        "Meta Ads management includes campaign strategy, audience research, ad creative testing, budget and bid optimization, and performance reporting. I work under supervision from an experienced marketer to make sure the results and decisions are grounded, not guesswork.",
+        "Meta Ads management includes campaign strategy, audience research, ad creative testing, budget and bid optimization, and performance reporting. We work with experienced marketers to make sure the results and decisions are grounded, not guesswork.",
     },
     {
       question: "Do I need to provide the content?",
       answer:
-        "If you already have content, great, we’ll shape and structure it. If not, I can help define the core message, structure the sections, and draft copy together with you. I’m not a pure copywriter, but I can guide messaging and suggest what content is needed where.",
+        "If you already have content, great, we'll shape and structure it. If not, we can help define the core message, structure the sections, and draft copy together with you. We're not pure copywriters, but we can guide messaging and suggest what content is needed where.",
     },
     {
       question: "What platforms do you integrate with?",
@@ -78,17 +78,17 @@ const faqsByLang: Record<
     {
       question: "Ar galite padėti su jau egzistuojančia svetaine?",
       answer:
-        "Taip. Galiu optimizuoti esamą svetainę, pagerinti greitį ir struktūrą, pakoreguoti dizainą, pridėti naujų sekcijų ar funkcijų. Jei dabartinis sprendimas visiškai neveža, dažnai logiškiau yra pastatyti naują, o ne lopti seną be pabaigos.",
+        "Taip. Galime optimizuoti esamą svetainę, pagerinti greitį ir struktūrą, pakoreguoti dizainą, pridėti naujų sekcijų ar funkcijų. Jei dabartinis sprendimas visiškai neveža, dažnai logiškiau yra pastatyti naują, o ne lopti seną be pabaigos.",
     },
     {
       question: "Kas įeina į Meta reklamos valdymą?",
       answer:
-        "Meta reklamos valdymas apima kampanijos strategiją, auditorijų analizę, reklamos kūrybų testavimą, biudžeto ir statymų optimizavimą bei rezultatų ataskaitas. Dirbu prižiūrimas labiau patyrusio rinkodaros specialisto, kad sprendimai būtų paremti duomenimis, o ne nuojauta.",
+        "Meta reklamos valdymas apima kampanijos strategiją, auditorijų analizę, reklamos kūrybų testavimą, biudžeto ir statymų optimizavimą bei rezultatų ataskaitas. Dirbame su patyrusiais rinkodaros specialistais, kad sprendimai būtų paremti duomenimis, o ne nuojauta.",
     },
     {
       question: "Ar turiu pateikti visą turinį pats?",
       answer:
-        "Jei turite paruoštą turinį – puiku, jį sutvarkysime ir sudėliosime. Jei ne, padėsiu išsigryninti žinutę, pasiūlyti struktūrą ir kartu su jumis sudėlioti tekstus. Nesu „grynas“ tekstų kūrėjas, bet galiu aiškiai parodyti, koks turinys reikalingas kurioje puslapio vietoje.",
+        'Jei turite paruoštą turinį – puiku, jį sutvarkysime ir sudėliosime. Jei ne, padėsime išsigryninti žinutę, pasiūlyti struktūrą ir kartu su jumis sudėlioti tekstus. Nesame „gryni" tekstų kūrėjai, bet galime aiškiai parodyti, koks turinys reikalingas kurioje puslapio vietoje.',
     },
     {
       question: "Su kokiomis platformomis integruojate?",

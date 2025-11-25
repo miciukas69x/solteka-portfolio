@@ -306,7 +306,7 @@ const SolutionsPageClient = () => {
 
           <div className="mt-16 text-center">
             <p className="text-muted-foreground mb-6">{t("solutions.q")}</p>
-            <a href="https://calendly.com/michailinasmatas/30min" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendly.com/solteka432/30min" target="_blank" rel="noopener noreferrer">
               <Button size="lg">{t("solutions.cta")}</Button>
             </a>
           </div>
