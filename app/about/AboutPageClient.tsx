@@ -1,7 +1,15 @@
 'use client';
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   Calendar, 
@@ -37,6 +45,12 @@ import {
 
 const AboutPageClient = () => {
   const { t } = useLanguage();
+  const [selectedItem, setSelectedItem] = useState<{
+    name: string;
+    icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
+    color: string;
+    descriptionKey: string;
+  } | null>(null);
 
   const offerings = [
     {
@@ -284,13 +298,13 @@ const AboutPageClient = () => {
                   </svg>
                   
                   {/* X-axis labels */}
-                  <div className="absolute bottom-0 left-0 right-0 flex justify-between px-12 pb-2">
-                    <span className="text-xs text-muted-foreground">Month 1</span>
-                    <span className="text-xs text-muted-foreground">Month 2</span>
-                    <span className="text-xs text-muted-foreground">Month 3</span>
-                    <span className="text-xs text-muted-foreground">Month 4</span>
-                    <span className="text-xs text-muted-foreground">Month 5</span>
-                    <span className="text-xs text-muted-foreground">Month 6</span>
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-between px-2 sm:px-12 pb-2">
+                    <span className="text-[10px] sm:text-xs text-muted-foreground">M1</span>
+                    <span className="text-[10px] sm:text-xs text-muted-foreground">M2</span>
+                    <span className="text-[10px] sm:text-xs text-muted-foreground">M3</span>
+                    <span className="text-[10px] sm:text-xs text-muted-foreground">M4</span>
+                    <span className="text-[10px] sm:text-xs text-muted-foreground">M5</span>
+                    <span className="text-[10px] sm:text-xs text-muted-foreground">M6</span>
                   </div>
                 </div>
                 
@@ -332,9 +346,17 @@ const AboutPageClient = () => {
                           className="aspect-square"
                           style={{ perspective: '1000px' }}
                         >
-                          <div className="relative w-full h-full group [transform-style:preserve-3d] transition-transform duration-700 hover:[transform:rotateY(180deg)]">
+                          <div 
+                            className="relative w-full h-full group [transform-style:preserve-3d] transition-transform duration-700 md:hover:[transform:rotateY(180deg)]"
+                            onClick={() => {
+                              // Only handle click on mobile (below md breakpoint)
+                              if (typeof window !== 'undefined' && window.innerWidth < 768) {
+                                setSelectedItem(item);
+                              }
+                            }}
+                          >
                             {/* Front face */}
-                            <Card className="absolute inset-0 bg-card border-border transition-all duration-300 [backface-visibility:hidden]">
+                            <Card className="absolute inset-0 bg-card border-border transition-all duration-300 [backface-visibility:hidden] md:cursor-default cursor-pointer">
                               <CardContent className="p-3 h-full flex flex-col items-center justify-center text-center">
                                 <div className="mb-2 p-2 bg-background rounded-lg transition-transform duration-300">
                                   <Icon 
@@ -346,8 +368,8 @@ const AboutPageClient = () => {
                               </CardContent>
                             </Card>
                             
-                            {/* Back face */}
-                            <Card className="absolute inset-0 bg-card border-primary/50 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                            {/* Back face - only visible on desktop */}
+                            <Card className="absolute inset-0 bg-card border-primary/50 [backface-visibility:hidden] [transform:rotateY(180deg)] hidden md:block">
                               <CardContent className="p-3 h-full flex flex-col justify-center text-center overflow-auto">
                                 <p className="text-xs leading-relaxed text-muted-foreground">
                                   {t(item.descKey)}
@@ -404,6 +426,30 @@ const AboutPageClient = () => {
           </div>
         </div>
       </section>
+      
+      {/* Dialog for mobile item descriptions */}
+      <Dialog open={!!selectedItem} onOpenChange={(open) => !open && setSelectedItem(null)}>
+        <DialogContent className="max-w-[90vw] sm:max-w-md">
+          {selectedItem && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="p-3 rounded-lg bg-primary/10">
+                    <selectedItem.icon 
+                      className="w-8 h-8" 
+                      style={{ color: selectedItem.color }}
+                    />
+                  </div>
+                  <DialogTitle className="text-xl">{selectedItem.name}</DialogTitle>
+                </div>
+              </DialogHeader>
+              <DialogDescription className="text-base leading-relaxed text-foreground mt-4">
+                {t(selectedItem.descKey)}
+              </DialogDescription>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

@@ -361,7 +361,7 @@ const translations = {
     "about.frameworks.title": "Ką Siūlome",
     "about.frameworks.subtitle": "Nuo šiuolaikinio svetainių kūrimo iki našumo rinkodaros ir finansinių konsultacijų—teikiame visą paslaugų spektrą, kurio reikia jūsų verslui augti internete.",
     "about.frameworks.fullstack": "Full-Stack Kūrimas",
-    "about.frameworks.performance": "Naudingumo Rinkodara",
+    "about.frameworks.performance": "Rinkodaros Kampanijos",
     "about.frameworks.creative": "Kūrybinė Gamyba",
     "about.frameworks.financial_analysis": "Finansinė Analizė",
     "about.frameworks.nextjs": "Next.js",
