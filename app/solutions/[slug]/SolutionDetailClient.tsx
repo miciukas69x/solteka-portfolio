@@ -447,7 +447,7 @@ const SolutionDetailClient = ({ slug }: SolutionDetailClientProps) => {
                   </Button>
                 </a>
                 {solution.hasPayment && (
-                  <a href="mailto:michailinasmatas@gmail.com" className="w-full">
+                  <a href="mailto:support@solteka.co" className="w-full">
                     <Button variant="outline" className="w-full">
                       <CreditCard className="w-4 h-4 mr-2" />
                       {t("solutionDetail.paymentCta")}

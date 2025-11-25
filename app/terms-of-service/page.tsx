@@ -65,7 +65,7 @@ const TermsOfServicePage = () => {
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Contact</h2>
-          <p className="text-muted-foreground mb-4">For questions about these Terms of Service, contact us at contact@michailinas.com</p>
+          <p className="text-muted-foreground mb-4">For questions about these Terms of Service, contact us at support@solteka.co</p>
         </div>
       </section>
     </div>

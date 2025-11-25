@@ -31,7 +31,7 @@ const ContactPageClient = () => {
                     <Mail className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold mb-1">{t("contact.info.e")}</h3>
-                      <p className="text-muted-foreground">michailinasmatas@gmail.com</p>
+                      <p className="text-muted-foreground">support@solteka.co</p>
                       <p className="text-sm text-muted-foreground mt-1">{t("contact.info.i")}</p>
                     </div>
                   </div>

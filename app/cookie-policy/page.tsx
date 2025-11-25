@@ -68,7 +68,7 @@ const CookiePolicyPage = () => {
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Contact Us</h2>
           <p className="text-muted-foreground mb-4">
-            If you have questions about our Cookie Policy, please contact us at contact@michailinas.com
+            If you have questions about our Cookie Policy, please contact us at support@solteka.co
           </p>
         </div>
       </section>
