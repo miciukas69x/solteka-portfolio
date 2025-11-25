@@ -17,18 +17,27 @@ const getSystemTheme = (): Theme =>
   typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<ThemeSetting>(() => {
+  const getInitialTheme = (): ThemeSetting => {
     if (typeof window === "undefined") {
-      return "system";
+      return "dark";
     }
-
     const saved = window.localStorage.getItem("theme");
-    return saved === "light" || saved === "dark" ? saved : "system";
-  });
+    return saved === "light" || saved === "dark" ? saved : "dark";
+  };
 
-  const [resolvedTheme, setResolvedTheme] = useState<Theme>(() =>
-    typeof window === "undefined" ? "dark" : getSystemTheme(),
-  );
+  const getInitialResolvedTheme = (initialTheme: ThemeSetting): Theme => {
+    if (typeof window === "undefined") {
+      return "dark";
+    }
+    if (initialTheme === "light") return "light";
+    if (initialTheme === "dark") return "dark";
+    if (initialTheme === "system") return getSystemTheme();
+    return "dark"; // fallback to dark
+  };
+
+  const initialTheme = getInitialTheme();
+  const [theme, setTheme] = useState<ThemeSetting>(initialTheme);
+  const [resolvedTheme, setResolvedTheme] = useState<Theme>(getInitialResolvedTheme(initialTheme));
 
   useEffect(() => {
     if (typeof window === "undefined") return;

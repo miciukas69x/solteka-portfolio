@@ -195,8 +195,8 @@ export const blogPosts: BlogPost[] = [
         "Test your structure by removing all styling. If the page still makes sense and guides users to action, you've nailed it.",
       ],
       lt: [
-        "Lankytojai peržvelgia, jie neskaito. Naudokite aiškius antraštes, trumpus pastraipas ir vizualinę hierarchiją, kad nukreiptumėte juos į jūsų CTA.",
-        "Geriausia struktūra: problema → sprendimas → įrodymas → veiksmas. Kiekviena sekcija turėtų atsakyti į 'kodėl man tai rūpi?' prieš eidama toliau.",
+        "Lankytojai peržvelgia, jie neskaito. Naudokite aiškias antraštes, trumpus pastraipas ir vizualinę hierarchiją, kad nukreiptumėte juos į jūsų CTA.",
+        "Geriausia struktūra: problema → sprendimas → įrodymas → veiksmas. Kiekviena sekcija turėtų atsakyti į 'kodėl man tai rūpi?' prieš einant toliau.",
         "Išbandykite savo struktūrą pašalindami visą stilių. Jei puslapis vis dar turi prasmę ir veda vartotojus į veiksmą, jūs tai įveikėte.",
       ],
     },

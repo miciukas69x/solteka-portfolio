@@ -69,6 +69,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">{t("footer.c")}</h3>
             <div className="space-y-2 text-sm">
+              <Link href="/about" className="block text-muted-foreground hover:text-primary transition-colors">
+                {t("footer.c.about")}
+              </Link>
               <Link href="/#faq" className="block text-muted-foreground hover:text-primary transition-colors">
                 {t("footer.c.faq")}
               </Link>
