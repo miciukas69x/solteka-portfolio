@@ -208,6 +208,9 @@ const translations = {
     "about.frameworks.forecasting.desc": "Revenue, expense, and cash flow forecasting based on historical data. Models to plan growth and anticipate cash needs.",
     "about.cta.testimonials": "See What Clients Say",
     "about.cta.consultation": "Book Free Consultation",
+    "about.cta.heading": "Curious About Our Company?",
+    "about.cta.subheading": "Learn more about our mission, vision, and the team behind Solteka.",
+    "about.cta.button": "Read About Us",
   },
   lt: {
     // Navigation
@@ -404,6 +407,9 @@ const translations = {
     "about.frameworks.forecasting.desc": "Pajamų, išlaidų ir pinigų srautų prognozavimas remiantis istoriniais duomenimis. Modeliai augimui planuoti ir pinigų poreikiui numatyti.",
     "about.cta.testimonials": "Pamatykite, ką kalba klientai",
     "about.cta.consultation": "Užsiregistruoti konsultacijai",
+    "about.cta.heading": "Susidomėjote mūsų kompanija?",
+    "about.cta.subheading": "Sužinokite daugiau apie mūsų misiją, viziją ir komandą už Soltekos vardo.",
+    "about.cta.button": "Skaityti apie mus",
   },
 };
 

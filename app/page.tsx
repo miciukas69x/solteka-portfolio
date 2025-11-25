@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AboutSimple from "@/components/AboutSimple";
 import ContactSimple from "@/components/ContactSimple";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
@@ -28,6 +29,7 @@ export default function HomePage() {
       <Hero />
       <Testimonials />
       <Services />
+      <AboutSimple />
       <FAQ />
       <ContactSimple />
     </div>
