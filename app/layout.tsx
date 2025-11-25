@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { KoHo, Roboto_Flex } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import { Providers } from "./providers";
 import Navigation from "@/components/Navigation";
@@ -51,7 +52,9 @@ export default function RootLayout({
           <Footer />
         </Providers>
         {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID ? (
-          <FacebookPixel pixelId={process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID} />
+          <Suspense fallback={null}>
+            <FacebookPixel pixelId={process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID} />
+          </Suspense>
         ) : (
           <div data-fb-pixel="missing" style={{ display: 'none' }} />
         )}
