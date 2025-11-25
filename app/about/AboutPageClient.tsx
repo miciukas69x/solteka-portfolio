@@ -49,7 +49,7 @@ const AboutPageClient = () => {
     name: string;
     icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
     color: string;
-    descriptionKey: string;
+    descKey: string;
   } | null>(null);
 
   const offerings = [
