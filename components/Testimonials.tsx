@@ -13,13 +13,13 @@ const Testimonials = () => {
     {
       name: "Arnas Linkevičius",
       role: "Marketingo specialistas.",
-      content: "Iš pradžių buvau skeptiškas, netikėjau, kad jis čia ka nors geba, bet pasirodo žino ką daro.",
+      content: "Super webas, tiko, patiko. Naudoju jau keletą mėnesių ir leidžiame reklamą kartu, puiki komanda, puikūs žmonės.",
       rating: 5,
     },
     {
       name: "Matas Ulskis",
       role: "Verslo įkūrėjas. Jurosgerybiunamai.lt",
-      content: "Puslapį sukūrė tokį kokio ir norėjau, tiesa iš pradžių buvo keletą bug'ų, bet viską vos pamačius - sutvarkė.",
+      content: "Puslapis toks, kokio ir norėjau. Testavimo ir paleidimo fazėje radome paskutinius bug'us, bet viską greitai sutvarkė. Puslapis puikus ir daugiau dėmesio nereikalauja.",
       rating: 5,
     },
     {

@@ -15,7 +15,7 @@ const TestimonialsPageClient = () => {
       role: "Marketingo specialistas",
       company: "",
       content:
-        "Iš pradžių buvau skeptiškas, netikėjau, kad jis čia ka nors geba, bet pasirodo žino ką daro.",
+        "Super webas, tiko, patiko. Naudoju jau keletą mėnesių ir leidžiame reklamą kartu, puiki komanda, puikūs žmonės.",
       rating: 5,
       project: "Simple Hustle",
     },
@@ -24,9 +24,9 @@ const TestimonialsPageClient = () => {
       role: "Verslo įkūrėjas",
       company: "Jurosgerybiunamai.lt",
       content:
-        "Puslapį sukūrė tokį kokio ir norėjau, tiesa iš pradžių buvo keletą bug'ų, bet viską vos pamačius - sutvarkė.",
+        "Puslapis toks, kokio ir norėjau. Testavimo ir paleidimo fazėje radome paskutinius bug'us, bet viską greitai sutvarkė. Puslapis puikus ir daugiau dėmesio nereikalauja.",
       rating: 5,
-      project: "Simple Hustle",
+      project: "E-commerce Shop",
     },
     {
       name: "Rogier Pyis",

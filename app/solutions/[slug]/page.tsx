@@ -7,19 +7,23 @@ import SolutionDetailClient from "./SolutionDetailClient";
 const solutionTitles: Record<string, string> = {
   "simple-hustle": "Simple Hustle",
   "seo-integrated": "SEO Integrated",
+  "ecommerce-shop": "E-commerce Shop",
   "fully-custom": "Fully Custom",
   "meta-ads": "Meta Ads Management",
   "seo-services": "SEO Services",
   "google-ads": "Google Ads",
+  "tiktok-ads": "TikTok Ads",
 };
 
 const solutionDescriptions: Record<string, string> = {
   "simple-hustle": "Get online fast with a beautiful, functional website. Perfect for entrepreneurs and small businesses.",
   "seo-integrated": "Pages built to rank and convert from day one. Designed for businesses that care about long-term organic traffic.",
+  "ecommerce-shop": "Full-featured online stores with payment processing and inventory management. Perfect for businesses ready to sell products online.",
   "fully-custom": "Tailored web solutions for unique business needs. Ideal for businesses needing a fully tailored digital solution.",
   "meta-ads": "Facebook & Instagram advertising campaigns that drive results. Perfect for businesses looking to grow through social media advertising.",
   "seo-services": "Technical and on-page optimization for better rankings. Best for businesses serious about long-term organic visibility.",
   "google-ads": "Search and display campaigns to reach your target audience. Ideal for businesses wanting immediate visibility on Google.",
+  "tiktok-ads": "Creative video campaigns that reach Gen Z and drive real engagement. Perfect for brands targeting younger audiences through video content.",
 };
 
 interface SolutionDetailPageProps {

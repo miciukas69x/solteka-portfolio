@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Code2, Rocket, Search, Sparkles, Target, TrendingUp } from "lucide-react";
+import { ArrowRight, Code2, Music, Rocket, Search, ShoppingCart, Sparkles, Target, TrendingUp } from "lucide-react";
 
 const solutionsByLang: Record<
   "en" | "lt",
@@ -64,6 +64,22 @@ const solutionsByLang: Record<
         ],
         badge: "Popular",
         ideal: "Best for businesses focused on organic growth and search visibility.",
+        category: "Page Solutions",
+      },
+      {
+        icon: <ShoppingCart className="w-8 h-8" />,
+        title: "E-commerce Shop",
+        slug: "ecommerce-shop",
+        description: "Full-featured online stores with payment processing and inventory management.",
+        features: [
+          "Shopify store setup & customization",
+          "Product catalog management",
+          "Payment gateway integration",
+          "Shipping & tax configuration",
+          "Order management system",
+        ],
+        badge: "E-commerce",
+        ideal: "Perfect for businesses ready to sell products online with a complete store solution.",
         category: "Page Solutions",
       },
       {
@@ -132,6 +148,22 @@ const solutionsByLang: Record<
         ideal: "Ideal for businesses wanting immediate visibility on Google.",
         category: "Marketing Solutions",
       },
+      {
+        icon: <Music className="w-8 h-8" />,
+        title: "TikTok Ads",
+        slug: "tiktok-ads",
+        description: "Creative video campaigns that reach younger audiences and drive engagement.",
+        features: [
+          "Video ad creative development",
+          "Audience targeting & optimization",
+          "Campaign setup & management",
+          "Performance tracking & analytics",
+          "Creative testing & iteration",
+        ],
+        badge: "Trending",
+        ideal: "Best for businesses targeting Gen Z and Millennial audiences through video content.",
+        category: "Marketing Solutions",
+      },
     ],
   },
   lt: {
@@ -165,6 +197,22 @@ const solutionsByLang: Record<
         ],
         badge: "Populiarus",
         ideal: "Geriausias verslams, kurie nori augti organiškai ir būti matomi paieškoje.",
+        category: "Puslapio sprendimai",
+      },
+      {
+        icon: <ShoppingCart className="w-8 h-8" />,
+        title: "E-commerce parduotuvė",
+        slug: "ecommerce-shop",
+        description: "Pilnai funkcionali internetinė parduotuvė su mokėjimų apdorojimu ir inventoriaus valdymu.",
+        features: [
+          "Shopify parduotuvės sukūrimas ir pritaikymas",
+          "Produktų katalogo valdymas",
+          "Mokėjimo sistemos integracija",
+          "Pristatymo ir mokesčių konfigūracija",
+          "Užsakymų valdymo sistema",
+        ],
+        badge: "E-commerce",
+        ideal: "Tinka verslams, kurie nori parduoti produktus internete su pilnu parduotuvės sprendimu.",
         category: "Puslapio sprendimai",
       },
       {
@@ -233,6 +281,22 @@ const solutionsByLang: Record<
         ideal: "Tinka verslams, kurie nori iškart matomumo Google.",
         category: "Marketingo sprendimai",
       },
+      {
+        icon: <Music className="w-8 h-8" />,
+        title: "TikTok reklama",
+        slug: "tiktok-ads",
+        description: "Kūrybinės vaizdo kampanijos, pasiekiančios jaunesnę auditoriją ir skatinančios įsitraukimą.",
+        features: [
+          "Vaizdo reklamų kūrybos kūrimas",
+          "Auditorijos taikymas ir optimizavimas",
+          "Kampanijų sukūrimas ir valdymas",
+          "Rezultatų stebėjimas ir analitika",
+          "Kūrybų testavimas ir iteracija",
+        ],
+        badge: "Populiaru",
+        ideal: "Geriausias verslams, kurie siekia pasiekti Gen Z ir Millennial auditoriją per vaizdo turinį.",
+        category: "Marketingo sprendimai",
+      },
     ],
   },
 };
@@ -296,12 +360,12 @@ const SolutionsPageClient = () => {
 
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8">{t("solutions.page")}</h2>
-            <div className="grid md:grid-cols-3 gap-8">{pageSolutions.map(renderSolutionCard)}</div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">{pageSolutions.map(renderSolutionCard)}</div>
           </div>
 
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8">{t("solutions.marketing")}</h2>
-            <div className="grid md:grid-cols-3 gap-8">{marketingSolutions.map(renderSolutionCard)}</div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">{marketingSolutions.map(renderSolutionCard)}</div>
           </div>
 
           <div className="mt-16 text-center">
