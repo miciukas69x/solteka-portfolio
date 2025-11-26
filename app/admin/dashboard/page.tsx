@@ -110,7 +110,12 @@ export default async function AdminDashboardPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {recentSubscribers.map((subscriber) => (
+                    {recentSubscribers.map((subscriber: {
+                      email: string;
+                      name: string | null;
+                      subscribedAt: Date;
+                      source: string | null;
+                    }) => (
                       <tr key={subscriber.email} className="border-b">
                         <td className="py-3 px-4">{subscriber.email}</td>
                         <td className="py-3 px-4">{subscriber.name || '-'}</td>
