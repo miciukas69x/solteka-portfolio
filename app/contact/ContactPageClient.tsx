@@ -26,7 +26,7 @@ const ContactPageClient = () => {
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold mb-6">{t("contact.info")}</h2>
 
-                <div classNamre="space-y-6">
+                <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <Mail className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                     <div>
