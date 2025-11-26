@@ -113,6 +113,17 @@ const translations = {
     "contact.precta": "Prefer to jump right in? Book a free consultation to discuss your project.",
     "contact.cta": "Book Free Consultation",
 
+    // Newsletter
+    "newsletter.heading": "Stay Updated",
+    "newsletter.subheading": "Get discounts, deals, and our latest blog posts",
+    "newsletter.emailPlaceholder": "Your email",
+    "newsletter.namePlaceholder": "Your name (optional)",
+    "newsletter.submit": "Subscribe",
+    "newsletter.submitting": "Subscribing...",
+    "newsletter.success": "Successfully subscribed!",
+    "newsletter.error": "Something went wrong. Please try again.",
+    "newsletter.alreadySubscribed": "This email is already subscribed.",
+
     "contact.expect": "What to Expect",
     "contact.initial": "Initial Consultation",
     "contact.initial.info": "We'll discuss your goals, timeline, and budget to ensure alignment.",
@@ -321,6 +332,17 @@ const translations = {
     "contact.connect": "Bendraukime per socalines medijas",
     "contact.precta": "Nežinai ko nori? Užsiregistruok nemokamai konsultacijai ir mes padėsime tau atrasti sprendimą",
     "contact.cta": "Užsiregistruoti konsultacijai",
+
+    // Newsletter
+    "newsletter.heading": "Būkite Informuoti",
+    "newsletter.subheading": "Gaukite nuolaidas, pasiūlymus ir naujausius tinklaraščio straipsnius",
+    "newsletter.emailPlaceholder": "Jūsų el. paštas",
+    "newsletter.namePlaceholder": "Jūsų vardas (nebūtina)",
+    "newsletter.submit": "Prenumeruoti",
+    "newsletter.submitting": "Prenumeruojama...",
+    "newsletter.success": "Sėkmingai užsiprenumeravote!",
+    "newsletter.error": "Kažkas nutiko. Bandykite dar kartą.",
+    "newsletter.alreadySubscribed": "Šis el. paštas jau užsiprenumeruotas.",
 
     "contact.expect": "Ko tikėtis?",
     "contact.initial": "Pirmoji konsultacija",

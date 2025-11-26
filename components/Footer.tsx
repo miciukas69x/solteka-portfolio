@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
+import NewsletterForm from "@/components/NewsletterForm";
 /*Footer
     "footer.s.all": "Visi sprendimai",
     "footer.s.simple": "Paprastas Hustle",
@@ -26,7 +27,7 @@ const Footer = () => {
   return (
     <footer className="py-16 px-6 border-t border-border bg-secondary/20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-5 gap-8 mb-12">
           <div className="col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Image src="/favicon-32x32.png" alt="Solteka" width={24} height={24} className="h-6 w-6" />
@@ -100,6 +101,10 @@ const Footer = () => {
                 {t("footer.l.cookie")}
               </Link>
             </div>
+          </div>
+
+          <div>
+            <NewsletterForm source="footer" />
           </div>
         </div>
         

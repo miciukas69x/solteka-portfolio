@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model NewsletterSubscriber {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  source        String?   // "footer", "hero", "blog", etc.
+  subscribedAt  DateTime  @default(now())
+  unsubscribedAt DateTime?
+  isActive      Boolean   @default(true)
+  tags          String[]  @default(["newsletter"]) // ["newsletter", "discounts", "blog"]
+  
+  @@index([email])
+  @@index([isActive])
+  @@map("newsletter_subscribers")
+}
