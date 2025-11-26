@@ -26,7 +26,7 @@ const ContactPageClient = () => {
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold mb-6">{t("contact.info")}</h2>
 
-                <div className="space-y-6">
+                <div classNamre="space-y-6">
                   <div className="flex items-start gap-4">
                     <Mail className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                     <div>
@@ -94,7 +94,7 @@ const ContactPageClient = () => {
                   <h3 className="font-semibold mb-4">{t("contact.connect")}</h3>
                   <div className="flex gap-4">
                     <a
-                      href="https://www.linkedin.com/in/matas-michailinas-48ba9b2a1/"
+                      href="https://www.linkedin.com/company/solteka-digital/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 bg-primary/10 rounded-lg text-primary hover:bg-primary/20 transition-colors"
