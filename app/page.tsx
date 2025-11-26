@@ -3,6 +3,7 @@ import AboutSimple from "@/components/AboutSimple";
 import ContactSimple from "@/components/ContactSimple";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
+import HowWeWork from "@/components/HowWeWork";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 
@@ -29,6 +30,7 @@ export default function HomePage() {
       <Hero />
       <Testimonials />
       <Services />
+      <HowWeWork />
       <AboutSimple />
       <FAQ />
       <ContactSimple />

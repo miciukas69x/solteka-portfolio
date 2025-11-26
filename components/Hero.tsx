@@ -47,9 +47,15 @@ const Hero = () => {
           {t("hero.title")}
         </p>
         
-        <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-12 animate-slide-up px-4">
+        <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-4 sm:mb-6 animate-slide-up px-4">
           {t("hero.subtitle")}
         </p>
+        
+        <div className="mb-6 sm:mb-8 animate-slide-up">
+          <span className="inline-block px-4 py-1.5 text-xs sm:text-sm text-muted-foreground bg-primary/10 border border-primary/20 rounded-full">
+            {t("hero.targetMarket")}
+          </span>
+        </div>
         
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-slide-up px-4">
           <Button 

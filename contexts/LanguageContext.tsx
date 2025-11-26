@@ -27,8 +27,9 @@ const translations = {
     
     // Hero
     "hero.heading": "Sell more. Stress less.",
-    "hero.title": "Marketing & Page Solutions",
-    "hero.subtitle": "From simple designs to fully custom platforms. Professional web development and digital marketing to help grow your business.",
+    "hero.title": "Websites & ads that actually bring clients",
+    "hero.subtitle": "Fast, clear pages and performance marketing for small businesses that want inquiries, bookings, and sales—not just 'online presence.'",
+    "hero.targetMarket": "For small & medium businesses in Lithuania and the Netherlands",
     "hero.cta": "View Services",
     "hero.cta2": "Get in Touch",
     
@@ -41,8 +42,18 @@ const translations = {
     "services.heading": "Popular Solutions",
     "services.subheading": "Our most requested services to help grow your business",
     "services.cta": "More Solutions",
-    "services.cta2": "Consultation",   
-
+    "services.cta2": "Consultation",
+    
+    // How We Work
+    "howWeWork.heading": "How We Work",
+    "howWeWork.subheading": "A simple, transparent process",
+    "howWeWork.step1.title": "Short Call",
+    "howWeWork.step1.description": "We discuss your needs, goals, and timeline to understand what you're looking for.",
+    "howWeWork.step2.title": "Proposal & Price",
+    "howWeWork.step2.description": "You receive a clear proposal with scope, timeline, and transparent pricing—no surprises.",
+    "howWeWork.step3.title": "Delivery & Support",
+    "howWeWork.step3.description": "We build, launch, and provide ongoing support to ensure everything works as expected.",
+    
     // FAQ
     "faq.heading": "FAQ",
     "faq.subheading": "Everything you need to know about our servcies",
@@ -225,8 +236,9 @@ const translations = {
     
     // Hero
     "hero.heading": "Auginkite pardavimus - ne rūpesčius.",
-    "hero.title": "Rinkodaros ir Svetainių Sprendimai",
-    "hero.subtitle": "Nuo paprastų dizainų iki visiškai individualių platformų. Profesionali svetainių kūrimo ir skaitmeninės rinkodaros paslauga, padedanti auginti jūsų verslą.",
+    "hero.title": "Svetainės ir reklama, kurios uždirba, o ne tik gražiai atrodo",
+    "hero.subtitle": "Kuriame greitus puslapius ir kampanijas, kad smulkus verslas gautų daugiau užklausų, rezervacijų ir pardavimų.",
+    "hero.targetMarket": "Skirta smulkiam ir vidutiniam verslui Lietuvoje ir Nyderlanduose",
     "hero.cta": "Peržiūrėti Paslaugas",
     "hero.cta2": "Susisiekime",
    
@@ -240,6 +252,16 @@ const translations = {
     "services.subheading": "Mūsų dažniausiai užsakomos paslaugos jūsų verslui auginti",
     "services.cta": "Daugiau sprendimų",
     "services.cta2": "Konsultacija",
+    
+    // How We Work
+    "howWeWork.heading": "Kaip Mes Dirbame",
+    "howWeWork.subheading": "Paprastas, skaidrus procesas",
+    "howWeWork.step1.title": "Trumpas Pokalbis",
+    "howWeWork.step1.description": "Aptariame jūsų poreikius, tikslus ir laikotarpius, kad suprastume, ko ieškote.",
+    "howWeWork.step2.title": "Pasiūlymas ir Kaina",
+    "howWeWork.step2.description": "Gaunate aiškų pasiūlymą su apimtimi, laikotarpiu ir skaidria kaina—jokių netikėtumų.",
+    "howWeWork.step3.title": "Pristatymas ir Palaikymas",
+    "howWeWork.step3.description": "Kuriame, paleidžiame ir teikiame nuolatinį palaikymą, kad viskas veiktų kaip tikėtasi.",
      
     // FAQ
     "faq.heading": "DUK",
