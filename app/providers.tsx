@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
+import NewsletterPopup from "@/components/NewsletterPopup";
 
 export const Providers = ({ children }: { children: ReactNode }) => {
   const [queryClient] = useState(() => new QueryClient());
@@ -21,6 +22,7 @@ export const Providers = ({ children }: { children: ReactNode }) => {
             <Toaster />
             <Sonner richColors position="top-center" />
             <Analytics />
+            <NewsletterPopup />
           </TooltipProvider>
         </LanguageProvider>
       </ThemeProvider>

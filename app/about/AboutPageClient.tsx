@@ -33,6 +33,7 @@ import {
   SiMeta,
   SiGoogleads,
   SiGoogleanalytics,
+  SiTiktok,
 } from "react-icons/si";
 import { 
   FaDatabase,
@@ -57,7 +58,7 @@ const AboutPageClient = () => {
       category: t("about.frameworks.fullstack"),
       items: [
         { name: t("about.frameworks.react"), icon: SiReact, color: "#61DAFB", descKey: "about.frameworks.react.desc" },
-        { name: t("about.frameworks.nextjs"), icon: SiNextdotjs, color: "#000000", descKey: "about.frameworks.nextjs.desc" },
+        { name: t("about.frameworks.nextjs"), icon: SiNextdotjs, color: "#888888", descKey: "about.frameworks.nextjs.desc" },
         { name: t("about.frameworks.typescript"), icon: SiTypescript, color: "#3178C6", descKey: "about.frameworks.typescript.desc" },
         { name: t("about.frameworks.tailwind"), icon: SiTailwindcss, color: "#06B6D4", descKey: "about.frameworks.tailwind.desc" },
         { name: t("about.frameworks.databases"), icon: FaDatabase, color: "#336791", descKey: "about.frameworks.databases.desc" },
@@ -69,6 +70,7 @@ const AboutPageClient = () => {
       items: [
         { name: t("about.frameworks.meta"), icon: SiMeta, color: "#0081FB", descKey: "about.frameworks.meta.desc" },
         { name: t("about.frameworks.google"), icon: SiGoogleads, color: "#4285F4", descKey: "about.frameworks.google.desc" },
+        { name: t("about.frameworks.tiktok"), icon: SiTiktok, color: "#888888", descKey: "about.frameworks.tiktok.desc" },
         { name: t("about.frameworks.seo"), icon: FaChartLine, color: "#FF6B35", descKey: "about.frameworks.seo.desc" },
         { name: t("about.frameworks.analytics"), icon: SiGoogleanalytics, color: "#F4B400", descKey: "about.frameworks.analytics.desc" },
         { name: t("about.frameworks.email"), icon: FaEnvelope, color: "#EA4335", descKey: "about.frameworks.email.desc" },

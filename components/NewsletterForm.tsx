@@ -11,12 +11,14 @@ interface NewsletterFormProps {
   source?: string
   tags?: string[]
   variant?: 'default' | 'inline' | 'minimal'
+  onSuccess?: () => void
 }
 
 export default function NewsletterForm({ 
   source = 'footer', 
   tags = ['newsletter'],
-  variant = 'default' 
+  variant = 'default',
+  onSuccess
 }: NewsletterFormProps) {
   const { t } = useLanguage()
   const [email, setEmail] = useState('')
@@ -69,6 +71,11 @@ export default function NewsletterForm({
       // Reset form
       setEmail('')
       setName('')
+
+      // Call onSuccess callback if provided (e.g., to close popup)
+      if (onSuccess) {
+        onSuccess()
+      }
     } catch (error) {
       console.error('Newsletter subscription error:', error)
       toast.error(t('newsletter.error'))
