@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
 
     // If testEmail is provided, send only to that email
     const recipients = testEmail 
-      ? subscribers.filter(s => s.email === testEmail)
+      ? subscribers.filter((s: { email: string }) => s.email === testEmail)
       : subscribers
 
     if (testEmail && recipients.length === 0) {
