@@ -75,8 +75,9 @@ export async function POST(request: NextRequest) {
     
     const results = []
 
-    // Send emails
-    for (const subscriber of recipients) {
+    // Send emails with delay to respect rate limit (2 requests per second)
+    for (let i = 0; i < recipients.length; i++) {
+      const subscriber = recipients[i]
       const unsubscribeUrl = `${baseUrl}/api/newsletter/unsubscribe?token=${subscriber.id}`
       
       try {
@@ -102,6 +103,12 @@ export async function POST(request: NextRequest) {
         } else {
           console.log(`Successfully sent to ${subscriber.email}, ID: ${data?.id}`)
           results.push({ email: subscriber.email, success: true, id: data?.id })
+        }
+        
+        // Add delay between emails to respect rate limit (600ms = ~1.6 req/sec, under 2/sec limit)
+        // Skip delay after the last email
+        if (i < recipients.length - 1) {
+          await new Promise(resolve => setTimeout(resolve, 600))
         }
       } catch (error) {
         console.error(`Error sending to ${subscriber.email}:`, error)

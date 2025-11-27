@@ -38,15 +38,24 @@ const AnimatedS = () => {
       canvas.height = rect.height;
     };
     updateCanvasSize();
-    window.addEventListener('resize', updateCanvasSize);
-
-    // Text configuration - smaller size for footer
-    const text = 'S';
-    const fontSize = Math.min(canvas.width / 1.2, 200);
-    const font = `bold ${fontSize}px 'Orbitron', sans-serif`;
     
     // Create particles from text
     const createParticles = () => {
+      // Ensure canvas size is up to date
+      const rect = container.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+      
+      // Don't proceed if canvas has no dimensions
+      if (canvas.width === 0 || canvas.height === 0) {
+        return;
+      }
+      
+      // Text configuration - smaller size for footer
+      const text = 'S';
+      const fontSize = Math.min(canvas.width / 1.2, 200);
+      const font = `bold ${fontSize}px 'Orbitron', sans-serif`;
+      
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.font = font;
       ctx.fillStyle = 'white';
@@ -95,6 +104,13 @@ const AnimatedS = () => {
     };
 
     createParticles();
+    
+    // Regenerate particles on resize
+    const handleResize = () => {
+      updateCanvasSize();
+      createParticles();
+    };
+    window.addEventListener('resize', handleResize);
 
     // Animation loop
     const animate = () => {
@@ -186,7 +202,7 @@ const AnimatedS = () => {
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      window.removeEventListener('resize', updateCanvasSize);
+      window.removeEventListener('resize', handleResize);
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseenter', handleMouseEnter);
       canvas.removeEventListener('mouseleave', handleMouseLeave);

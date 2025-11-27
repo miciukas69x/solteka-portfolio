@@ -39,18 +39,25 @@ const AnimatedSolteka = () => {
       canvas.height = rect.height;
     };
     updateCanvasSize();
-    window.addEventListener('resize', updateCanvasSize);
-
-    // Text configuration - responsive sizing
-    const text = 'SOLTEKA';
-    const isMobile = canvas.width < 768;
-    const fontSize = isMobile 
-      ? Math.min(canvas.width / 4.5, 100) 
-      : Math.min(canvas.width / 5, 180);
-    const font = `bold ${fontSize}px 'Orbitron', sans-serif`;
     
     // Create particles from text
     const createParticles = () => {
+      // Ensure canvas size is up to date
+      const rect = container.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+      
+      // Text configuration - responsive sizing (recalculated each time)
+      const text = 'SOLTEKA';
+      // Use window width for mobile check, but always use proportional sizing
+      const windowWidth = typeof window !== 'undefined' ? window.innerWidth : canvas.width;
+      const isMobile = windowWidth < 768;
+      // Desktop: use /6 for a bit smaller size
+      const fontSize = isMobile 
+        ? canvas.width / 6.5
+        : canvas.width / 6;
+      const font = `bold ${fontSize}px 'Orbitron', sans-serif`;
+      
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.font = font;
       ctx.fillStyle = 'white';
@@ -65,10 +72,10 @@ const AnimatedSolteka = () => {
       const data = imageData.data;
       particlesRef.current = [];
 
-      // Adjust spacing and radius for mobile
-      const isMobile = canvas.width < 768;
-      const spacing = isMobile ? 4 : 3; // More spacing on mobile for performance
-      const radius = isMobile ? 2.5 : 3;
+      // Mobile: smaller dots, more particles (less spacing), better definition
+      // Desktop: slightly larger dots with more spacing
+      const spacing = isMobile ? 3 : 4; // Less spacing on mobile = more particles
+      const radius = isMobile ? 2 : 2.5; // Smaller dots on mobile
 
       // Use multiple sample points per spacing to ensure no gaps
       for (let y = 0; y < canvas.height; y += spacing) {
@@ -103,6 +110,13 @@ const AnimatedSolteka = () => {
     };
 
     createParticles();
+    
+    // Regenerate particles on resize
+    const handleResize = () => {
+      updateCanvasSize();
+      createParticles();
+    };
+    window.addEventListener('resize', handleResize);
 
     // Animation loop
     const animate = () => {
@@ -197,7 +211,7 @@ const AnimatedSolteka = () => {
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      window.removeEventListener('resize', updateCanvasSize);
+      window.removeEventListener('resize', handleResize);
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseenter', handleMouseEnter);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
