@@ -10,7 +10,7 @@ const PrivacyPolicyPage = () => {
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Introduction</h2>
           <p className="text-muted-foreground mb-4">
-            At Michailinas, we respect your privacy and are committed to protecting your personal data. This privacy
+            At Solteka, we respect your privacy and are committed to protecting your personal data. This privacy
             policy explains how we collect, use, and safeguard your information when you visit our website or use our
             services.
           </p>

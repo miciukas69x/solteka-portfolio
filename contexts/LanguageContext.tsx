@@ -90,6 +90,7 @@ const translations = {
     "footer.l.tos": "Terms Of Service",
     "footer.l.cookie": "Cookie policy",
     "footer.rights": "All rights reserved.",
+    "footer.kvk": "KVK: 98993402",
     "footer.consultation": "Book a Consultation",
 
     // Contact Page
@@ -328,6 +329,7 @@ const translations = {
     "footer.l.tos": "Naudojimo sąlygos",
     "footer.l.cookie": "Slapukų politika",
     "footer.rights": "Visos teisės rezervuotos.",
+    "footer.kvk": "KVK: 98993402",
     "footer.consultation": "Užsiregistruoti konsultacijai",
 
     // Contact Page

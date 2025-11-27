@@ -48,7 +48,7 @@ export const solutionsByLang: Record<
         "Perfect for entrepreneurs and small businesses who need a professional online presence quickly without compromising on clarity or quality.",
       features: [
         "Professional design tailored to your brand",
-        "Fast 1–2 week turnaround time",
+        "Fast turnaround time - up to 1 week",
         "Mobile-responsive layout",
         "Integrations with Calendly, forms, and email tools",
         "E-commerce ready with Shopify integration (optional)",
@@ -252,7 +252,7 @@ export const solutionsByLang: Record<
         "Skirta verslininkams ir smulkiam verslui, kuriems reikia profesionalaus puslapio be bereikalingo sudėtingumo.",
       features: [
         "Profesionalus dizainas pagal jūsų prekinį ženklą",
-        "Greitas įgyvendinimas per 1–2 savaites",
+        "Greitas įgyvendinimas - iki 1 savaitės",
         "Pilnai prisitaikantis dizainas telefonui ir kompiuteriui",
         "Integracijos su Calendly, formomis ir el. pašto įrankiais",
         "Pagrindinis hostingo ir domeno sutvarkymas",

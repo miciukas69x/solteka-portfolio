@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
 
 interface Particle {
   x: number;
@@ -15,7 +14,7 @@ interface Particle {
   originalY: number;
 }
 
-const AnimatedSolteka = () => {
+const AnimatedS = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number | undefined>(undefined);
@@ -41,12 +40,9 @@ const AnimatedSolteka = () => {
     updateCanvasSize();
     window.addEventListener('resize', updateCanvasSize);
 
-    // Text configuration - responsive sizing
-    const text = 'SOLTEKA';
-    const isMobile = canvas.width < 768;
-    const fontSize = isMobile 
-      ? Math.min(canvas.width / 4.5, 100) 
-      : Math.min(canvas.width / 5, 180);
+    // Text configuration - smaller size for footer
+    const text = 'S';
+    const fontSize = Math.min(canvas.width / 1.2, 200);
     const font = `bold ${fontSize}px 'Orbitron', sans-serif`;
     
     // Create particles from text
@@ -65,15 +61,11 @@ const AnimatedSolteka = () => {
       const data = imageData.data;
       particlesRef.current = [];
 
-      // Adjust spacing and radius for mobile
-      const isMobile = canvas.width < 768;
-      const spacing = isMobile ? 4 : 3; // More spacing on mobile for performance
-      const radius = isMobile ? 2.5 : 3;
+      const spacing = 3;
+      const radius = 2;
 
-      // Use multiple sample points per spacing to ensure no gaps
       for (let y = 0; y < canvas.height; y += spacing) {
         for (let x = 0; x < canvas.width; x += spacing) {
-          // Sample multiple points within the spacing area to avoid missing pixels
           let foundPixel = false;
           for (let dy = 0; dy < spacing && !foundPixel; dy++) {
             for (let dx = 0; dx < spacing && !foundPixel; dx++) {
@@ -82,9 +74,9 @@ const AnimatedSolteka = () => {
               const index = (sampleY * canvas.width + sampleX) * 4;
               const alpha = data[index + 3];
 
-              if (alpha > 100) { // Lower threshold to catch more pixels
+              if (alpha > 100) {
                 particlesRef.current.push({
-                  x: x + spacing / 2, // Center the particle in the spacing area
+                  x: x + spacing / 2,
                   y: y + spacing / 2,
                   targetX: x + spacing / 2,
                   targetY: y + spacing / 2,
@@ -94,7 +86,7 @@ const AnimatedSolteka = () => {
                   originalX: x + spacing / 2,
                   originalY: y + spacing / 2,
                 });
-                foundPixel = true; // Only add one particle per spacing area
+                foundPixel = true;
               }
             }
           }
@@ -111,13 +103,12 @@ const AnimatedSolteka = () => {
       const mouse = mouseRef.current;
       const particles = particlesRef.current;
 
-      // Handle mouse leave animation - very subtle wave effect
+      // Handle mouse leave animation
       if (leaveAnimationRef.current > 0) {
         leaveAnimationRef.current -= 0.012;
         const animationProgress = leaveAnimationRef.current;
         
-        particles.forEach((particle, index) => {
-          // Create a very subtle wave effect from center
+        particles.forEach((particle) => {
           const centerX = canvas.width / 2;
           const centerY = canvas.height / 2;
           const dx = particle.originalX - centerX;
@@ -126,8 +117,7 @@ const AnimatedSolteka = () => {
           const maxDistance = Math.max(canvas.width, canvas.height) / 2;
           const normalizedDistance = distanceFromCenter / maxDistance;
           
-          // Very subtle wave effect - further reduced intensity
-          const waveOffset = Math.sin(normalizedDistance * 6 - animationProgress * 12) * 8 * animationProgress;
+          const waveOffset = Math.sin(normalizedDistance * 6 - animationProgress * 12) * 6 * animationProgress;
           const angle = Math.atan2(dy, dx);
           
           particle.vx += Math.cos(angle) * waveOffset * 0.1;
@@ -139,8 +129,8 @@ const AnimatedSolteka = () => {
         const dx = mouse.x - particle.x;
         const dy = mouse.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const maxDistance = isHovered ? 350 : 200;
-        const force = isHovered ? 1.5 : 0.6;
+        const maxDistance = isHovered ? 250 : 150;
+        const force = isHovered ? 1.2 : 0.5;
 
         if (distance < maxDistance && leaveAnimationRef.current <= 0) {
           const angle = Math.atan2(dy, dx);
@@ -149,12 +139,12 @@ const AnimatedSolteka = () => {
           particle.vy -= Math.sin(angle) * force * forceStrength;
         }
 
-        // Return to original position - slightly stronger during leave animation
+        // Return to original position
         const returnForce = leaveAnimationRef.current > 0 ? 0.1 : 0.08;
         particle.vx += (particle.originalX - particle.x) * returnForce;
         particle.vy += (particle.originalY - particle.y) * returnForce;
 
-        // Apply velocity with less damping for more movement
+        // Apply velocity
         particle.vx *= 0.9;
         particle.vy *= 0.9;
         particle.x += particle.vx;
@@ -188,7 +178,6 @@ const AnimatedSolteka = () => {
     const handleMouseLeave = () => {
       setIsHovered(false);
       mouseRef.current = { x: -1000, y: -1000 };
-      // Trigger leave animation
       leaveAnimationRef.current = 1;
     };
 
@@ -210,16 +199,15 @@ const AnimatedSolteka = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full max-w-7xl mx-auto h-[120px] sm:h-[160px] md:h-[240px] lg:h-[280px] flex items-center justify-center cursor-pointer"
+      className="hidden md:block w-64 h-64 cursor-pointer"
     >
       <canvas
         ref={canvasRef}
         className="w-full h-full"
-        style={{ maxWidth: '100%', height: 'auto' }}
       />
     </div>
   );
 };
 
-export default AnimatedSolteka;
+export default AnimatedS;
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { KoHo, Roboto_Flex } from "next/font/google";
+import { KoHo, Roboto_Flex, Orbitron } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import { Providers } from "./providers";
@@ -18,6 +18,13 @@ const solteka = Roboto_Flex({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-solteka",
+});
+
+// Orbitron for animated text - futuristic, geometric style
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-orbitron",
 });
 
 export const metadata: Metadata = {
@@ -45,7 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${koho.variable} ${solteka.variable} antialiased bg-background text-foreground`}>
+      <body className={`${koho.variable} ${solteka.variable} ${orbitron.variable} antialiased bg-background text-foreground`}>
         <Providers>
           <Navigation />
           <main>{children}</main>

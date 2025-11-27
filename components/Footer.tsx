@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import NewsletterForm from "@/components/NewsletterForm";
+import AnimatedS from "@/components/AnimatedS";
 /*Footer
     "footer.s.all": "Visi sprendimai",
     "footer.s.simple": "Paprastas Hustle",
@@ -33,9 +34,12 @@ const Footer = () => {
               <Image src="/favicon-32x32.png" alt="Solteka" width={24} height={24} className="h-6 w-6" />
               <span className="font-semibold">Solteka</span>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-4">
               {t("footer.heading")}
             </p>
+            <div className="hidden md:block -ml-4">
+              <AnimatedS />
+            </div>
           </div>
           
           <div>
@@ -115,9 +119,14 @@ const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Solteka. {t("footer.rights")}
-          </p>
+          <div className="flex flex-col gap-1">
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} Solteka. {t("footer.rights")}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {t("footer.kvk")}
+            </p>
+          </div>
           
           <a 
             href="https://calendly.com/solteka432/30min" 

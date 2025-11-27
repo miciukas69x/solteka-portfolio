@@ -10,13 +10,13 @@ const TermsOfServicePage = () => {
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Agreement to Terms</h2>
           <p className="text-muted-foreground mb-4">
-            By accessing or using Michailinas services, you agree to be bound by these Terms of Service. If you disagree
+            By accessing or using Solteka services, you agree to be bound by these Terms of Service. If you disagree
             with any part of these terms, you may not access our services.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Services</h2>
           <p className="text-muted-foreground mb-4">
-            Michailinas provides web development and digital marketing services including but not limited to:
+            Solteka provides web development and digital marketing services including but not limited to:
           </p>
           <ul className="list-disc pl-6 text-muted-foreground mb-4">
             <li>Website design and development</li>
@@ -54,7 +54,7 @@ const TermsOfServicePage = () => {
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Limitation of Liability</h2>
           <p className="text-muted-foreground mb-4">
-            Michailinas shall not be liable for any indirect, incidental, special, or consequential damages arising from the
+            Solteka shall not be liable for any indirect, incidental, special, or consequential damages arising from the
             use of our services.
           </p>
 
