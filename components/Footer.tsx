@@ -51,6 +51,9 @@ const Footer = () => {
               <Link href="/solutions/seo-integrated" className="block text-muted-foreground hover:text-primary transition-colors">
                 {t("footer.s.seo")}
               </Link>
+              <Link href="/solutions/ecommerce-shop" className="block text-muted-foreground hover:text-primary transition-colors">
+                {t("footer.s.ecommerce")}
+              </Link>
               <Link href="/solutions/fully-custom" className="block text-muted-foreground hover:text-primary transition-colors">
                 {t("footer.s.custom")}
               </Link>
@@ -63,6 +66,9 @@ const Footer = () => {
               </Link>
               <Link href="/solutions/google-ads" className="block text-muted-foreground hover:text-primary transition-colors">
                 {t("footer.s.google")}
+              </Link>
+              <Link href="/solutions/tiktok-ads" className="block text-muted-foreground hover:text-primary transition-colors">
+                {t("footer.s.tiktok")}
               </Link>
             </div>
           </div>

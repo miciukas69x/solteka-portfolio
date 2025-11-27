@@ -73,6 +73,8 @@ const translations = {
     "footer.s.meta": "Meta Ads",
     "footer.s.adseo": "SEO Services",
     "footer.s.google": "Google Ads",
+    "footer.s.ecommerce": "E-commerce Shop",
+    "footer.s.tiktok": "TikTok Ads",
     "footer.h.1": "Page Solutions",
     "footer.h.2": "Marketing Solutions",
 
@@ -152,6 +154,20 @@ const translations = {
     "solutionDetail.ready": "Ready to Get Started?",
     "solutionDetail.readyText": "Book a free consultation to discuss your project, or proceed directly to payment if you're ready to begin.",
     "solutionDetail.paymentCta": "Proceed to Payment",
+    
+    // Checkout
+    "checkout.heading": "Complete Your Order",
+    "checkout.subheading": "Fill in your details to proceed with payment",
+    "checkout.name": "Full Name",
+    "checkout.email": "Email Address",
+    "checkout.phone": "Phone Number",
+    "checkout.comment": "Additional Comments",
+    "checkout.commentPlaceholder": "Tell us about your project, timeline, or any specific requirements...",
+    "checkout.demoPromise": "Demo Presentation Promise",
+    "checkout.demoText": "We'll present a demo of your solution within the next couple of days after payment confirmation.",
+    "checkout.payButton": "Proceed to Payment",
+    "checkout.back": "Back to Solution",
+    "checkout.orderSummary": "Order Summary",
 
 
 
@@ -295,6 +311,8 @@ const translations = {
     "footer.s.meta": "Meta reklama",
     "footer.s.adseo": "SEO paslaugos",
     "footer.s.google": "Google reklama",
+    "footer.s.ecommerce": "E-commerce parduotuvė",
+    "footer.s.tiktok": "TikTok reklama",
     "footer.h.1": "Puslapių sprendimai",
     "footer.h.2": "Marketingo sprendimai",
 
@@ -375,6 +393,20 @@ const translations = {
     "solutionDetail.ready": "Pasiruošę pradėti?",
     "solutionDetail.readyText": "Užsisakykite nemokamą konsultaciją projektui aptarti arba, jei jau apsisprendėte, pereikite tiesiai prie apmokėjimo.",
     "solutionDetail.paymentCta": "Tęsti į apmokėjimą",
+    
+    // Checkout
+    "checkout.heading": "Užbaikite užsakymą",
+    "checkout.subheading": "Užpildykite savo duomenis, kad galėtumėte tęsti apmokėjimą",
+    "checkout.name": "Vardas, pavardė",
+    "checkout.email": "El. pašto adresas",
+    "checkout.phone": "Telefono numeris",
+    "checkout.comment": "Papildomi komentarai",
+    "checkout.commentPlaceholder": "Papasakokite apie savo projektą, terminus arba bet kokius specifinius reikalavimus...",
+    "checkout.demoPromise": "Demo pristatymo pažadas",
+    "checkout.demoText": "Per kelias dienas po apmokėjimo patvirtinimo pristatysime jūsų sprendimo demonstraciją.",
+    "checkout.payButton": "Tęsti į apmokėjimą",
+    "checkout.back": "Atgal į sprendimą",
+    "checkout.orderSummary": "Užsakymo santrauka",
 
 
 

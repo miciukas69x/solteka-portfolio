@@ -23,3 +23,24 @@ model NewsletterSubscriber {
   @@index([isActive])
   @@map("newsletter_subscribers")
 }
+
+model CheckoutSubmission {
+  id            String    @id @default(cuid())
+  name          String
+  email         String
+  phone         String
+  comment       String?
+  solutionSlug  String    // "simple-hustle", "seo-integrated", etc.
+  solutionTitle String    // Store solution title for reference
+  pricing       String    // Store pricing info
+  status        String    @default("pending") // "pending", "paid", "cancelled"
+  stripeSessionId String? // Will be set when Stripe is integrated
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  @@index([email])
+  @@index([solutionSlug])
+  @@index([status])
+  @@index([createdAt])
+  @@map("checkout_submissions")
+}

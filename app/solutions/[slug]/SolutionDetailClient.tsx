@@ -21,7 +21,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-const solutionsByLang: Record<
+export const solutionsByLang: Record<
   "en" | "lt",
   Record<
     string,
@@ -166,7 +166,7 @@ const solutionsByLang: Record<
       pricing: "Starting at $500/month + ad spend",
       timeline: "Ongoing monthly service",
       badge: "Popular",
-      hasPayment: true,
+      hasPayment: false,
     },
     "seo-services": {
       icon: <TrendingUp className="w-12 h-12" />,
@@ -190,7 +190,7 @@ const solutionsByLang: Record<
       pricing: "Starting at $800/month",
       timeline: "Ongoing monthly service",
       badge: "Growth",
-      hasPayment: true,
+      hasPayment: false,
     },
     "google-ads": {
       icon: <Rocket className="w-12 h-12" />,
@@ -214,7 +214,7 @@ const solutionsByLang: Record<
       pricing: "Starting at $600/month + ad spend",
       timeline: "Ongoing monthly service",
       badge: "Performance",
-      hasPayment: true,
+      hasPayment: false,
     },
     "tiktok-ads": {
       icon: <Music className="w-12 h-12" />,
@@ -240,7 +240,7 @@ const solutionsByLang: Record<
       pricing: "Starting at $600/month + ad spend",
       timeline: "Ongoing monthly service",
       badge: "Trending",
-      hasPayment: true,
+      hasPayment: false,
     },
   },
   lt: {
@@ -369,7 +369,7 @@ const solutionsByLang: Record<
       pricing: "Nuo 500 €/mėn. + reklamos biudžetas",
       timeline: "Tęstinė mėnesinė paslauga",
       badge: "Populiaru",
-      hasPayment: true,
+      hasPayment: false,
     },
     "seo-services": {
       icon: <TrendingUp className="w-12 h-12" />,
@@ -393,7 +393,7 @@ const solutionsByLang: Record<
       pricing: "Nuo 800 €/mėn.",
       timeline: "Tęstinė mėnesinė paslauga",
       badge: "Augimas",
-      hasPayment: true,
+      hasPayment: false,
     },
     "google-ads": {
       icon: <Rocket className="w-12 h-12" />,
@@ -417,7 +417,7 @@ const solutionsByLang: Record<
       pricing: "Nuo 600 €/mėn. + reklamos biudžetas",
       timeline: "Tęstinė mėnesinė paslauga",
       badge: "Rezultatai",
-      hasPayment: true,
+      hasPayment: false,
     },
     "tiktok-ads": {
       icon: <Music className="w-12 h-12" />,
@@ -443,7 +443,7 @@ const solutionsByLang: Record<
       pricing: "Nuo 600 €/mėn. + reklamos biudžetas",
       timeline: "Tęstinė mėnesinė paslauga",
       badge: "Populiaru",
-      hasPayment: true,
+      hasPayment: false,
     },
   },
 };
@@ -555,12 +555,12 @@ const SolutionDetailClient = ({ slug }: SolutionDetailClientProps) => {
                   </Button>
                 </a>
                 {solution.hasPayment && (
-                  <a href="mailto:support@solteka.co" className="w-full">
+                  <Link href={`/solutions/${slug}/checkout`} className="w-full">
                     <Button variant="outline" className="w-full">
                       <CreditCard className="w-4 h-4 mr-2" />
                       {t("solutionDetail.paymentCta")}
                     </Button>
-                  </a>
+                  </Link>
                 )}
               </div>
             </CardContent>
