@@ -12,6 +12,7 @@ const solutionTitles: Record<string, string> = {
 
 interface CheckoutPageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ cancelled?: string }>;
 }
 
 export async function generateMetadata({ params }: CheckoutPageProps): Promise<Metadata> {
@@ -30,14 +31,15 @@ export async function generateMetadata({ params }: CheckoutPageProps): Promise<M
   };
 }
 
-export default async function CheckoutPage({ params }: CheckoutPageProps) {
+export default async function CheckoutPage({ params, searchParams }: CheckoutPageProps) {
   const { slug } = await params;
+  const { cancelled } = await searchParams;
   
   // Validate slug exists and is a website solution
   if (!solutionTitles[slug]) {
     notFound();
   }
 
-  return <CheckoutClient slug={slug} />;
+  return <CheckoutClient slug={slug} cancelled={cancelled === 'true'} />;
 }
 

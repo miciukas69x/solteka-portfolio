@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -28,9 +28,10 @@ type SolutionData = {
 
 interface CheckoutClientProps {
   slug: string;
+  cancelled?: boolean;
 }
 
-const CheckoutClient = ({ slug }: CheckoutClientProps) => {
+const CheckoutClient = ({ slug, cancelled = false }: CheckoutClientProps) => {
   const { t, language } = useLanguage();
   const langKey: "en" | "lt" = language === "lt" ? "lt" : "en";
   const solution = solutionsByLang[langKey][slug];
@@ -44,6 +45,13 @@ const CheckoutClient = ({ slug }: CheckoutClientProps) => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Show cancellation message if payment was cancelled
+  useEffect(() => {
+    if (cancelled) {
+      toast.error(t("checkout.cancelledMessage"));
+    }
+  }, [cancelled, t]);
+
   if (!solution) {
     return null;
   }
@@ -53,6 +61,12 @@ const CheckoutClient = ({ slug }: CheckoutClientProps) => {
     setIsSubmitting(true);
     
     try {
+      // Check if pricing is custom
+      const isCustomPricing = solution.pricing.toLowerCase().includes('custom') ||
+                             solution.pricing.toLowerCase().includes('priklauso') ||
+                             solution.pricing.toLowerCase().includes('apskaičiuojama');
+      
+      // First, save the submission
       const response = await fetch('/api/checkout', {
         method: 'POST',
         headers: {
@@ -75,21 +89,46 @@ const CheckoutClient = ({ slug }: CheckoutClientProps) => {
         throw new Error(data.error || 'Failed to submit form');
       }
 
-      // TODO: Redirect to Stripe checkout with submissionId
-      // For now, show success message
-      toast.success('Form submitted successfully! We will contact you soon.');
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        comment: '',
+      // Handle custom pricing - no Stripe redirect
+      if (isCustomPricing) {
+        toast.success('We will contact you soon with a custom quote!');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          comment: '',
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Create Stripe checkout session
+      const sessionResponse = await fetch('/api/checkout/create-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          submissionId: data.submissionId,
+        }),
       });
+
+      const sessionData = await sessionResponse.json();
+
+      if (!sessionResponse.ok) {
+        throw new Error(sessionData.error || 'Failed to create payment session');
+      }
+
+      // Redirect to Stripe Checkout
+      if (sessionData.url) {
+        window.location.href = sessionData.url;
+      } else {
+        throw new Error('No checkout URL received');
+      }
     } catch (error) {
       console.error('Submission error:', error);
-      toast.error('Failed to submit form. Please try again.');
-    } finally {
+      toast.error(error instanceof Error ? error.message : 'Failed to submit form. Please try again.');
       setIsSubmitting(false);
     }
   };

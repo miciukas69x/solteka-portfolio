@@ -169,6 +169,12 @@ const translations = {
     "checkout.payButton": "Proceed to Payment",
     "checkout.back": "Back to Solution",
     "checkout.orderSummary": "Order Summary",
+    "checkout.cancelled": "Payment cancelled",
+    "checkout.cancelledMessage": "Your payment was cancelled. You can try again when you're ready.",
+    "checkout.success.heading": "Payment Successful!",
+    "checkout.success.message": "Thank you for your payment. We've received your order and will contact you within the next couple of days to present your demo.",
+    "checkout.success.backHome": "Back to Home",
+    "checkout.success.verifying": "Verifying payment...",
 
 
 
@@ -409,6 +415,12 @@ const translations = {
     "checkout.payButton": "Tęsti į apmokėjimą",
     "checkout.back": "Atgal į sprendimą",
     "checkout.orderSummary": "Užsakymo santrauka",
+    "checkout.cancelled": "Apmokėjimas atšauktas",
+    "checkout.cancelledMessage": "Jūsų apmokėjimas buvo atšauktas. Galite bandyti dar kartą, kai būsite pasiruošę.",
+    "checkout.success.heading": "Apmokėjimas sėkmingas!",
+    "checkout.success.message": "Ačiū už apmokėjimą. Gavome jūsų užsakymą ir susisieksime per artimiausias porą dienų, kad pristatytume jūsų demonstraciją.",
+    "checkout.success.backHome": "Grįžti į pagrindinį",
+    "checkout.success.verifying": "Tikrinamas apmokėjimas...",
 
 
 
